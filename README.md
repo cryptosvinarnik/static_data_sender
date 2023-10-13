@@ -11,6 +11,7 @@ To run the main.py script, follow these steps:
 - Edit the config.yaml file to your desired settings.
 - Run the script by running <code>python ./src/main.py</code>
 - **..MAGIC!..**
+- Subscribe to my <a href="https://t.me/cryptosvinarnik">channel</a>
 
 ## Configure config.yaml file!
 
