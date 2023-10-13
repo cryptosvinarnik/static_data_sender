@@ -1,0 +1,20 @@
+# Contract address
+CONTRACT: ""
+
+# Tx input data (example: 0xe9e05c42)
+INPUT_DATA: ""
+
+# tx value (float || int, not wei/gwei)
+VALUE: 0
+
+# Gas target (gwei in float || int)
+GAS_TARGET: 6.2
+
+# RPC
+RPC: "https://rpc.ankr.com/eth"
+
+# Range of sleep between account work (in seconds)
+SLEEP_BETWEEN_ACCOUNT_WORK: [2, 7]
+
+# Number of threads
+WORKERS_COUNT: 2
