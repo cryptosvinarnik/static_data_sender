@@ -1,3 +1,5 @@
+# Script for sending transactions with static data. Suitable for nft mints, claims and so on. Created for warming up accounts in different chains.
+
 ## Run script
 To run the main.py script, follow these steps:
 
