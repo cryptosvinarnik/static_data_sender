@@ -49,8 +49,8 @@ async def worker(
             tx_hash = await w3.estimate_and_send_transaction(
                 tx_params={
                     "to": config.CONTRACT,
-                    "data": config.INPUT_DATA,
-                    "value": config.VALUE,
+                    "data": config.INPUT_DATA.format(address=w3.account_address[2:].lower()),
+                    "value": Web3.to_wei(config.VALUE, "ether"),
                     **(await w3.eip1559_gas_price),
                 }
             )

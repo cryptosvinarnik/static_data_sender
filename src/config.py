@@ -9,7 +9,7 @@ class Config(BaseModel):
     WORKERS_COUNT: int
     SLEEP_BETWEEN_ACCOUNT_WORK: list[int]
     GAS_TARGET: float | int
-    VALUE: int | float
+    VALUE: float
 
 
 def load_config() -> Config:

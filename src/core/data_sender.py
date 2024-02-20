@@ -31,8 +31,7 @@ class Web3Wrapper:
 
         :return: HexBytes transaction hash
         """
-        if not self.web3.is_checksum_address(tx_params["to"]):
-            tx_params["to"] = self.web3.to_checksum_address(tx_params["to"])
+        tx_params["to"] = self.web3.to_checksum_address(tx_params["to"])
 
         if not tx_params.get("nonce"):
             tx_params["nonce"] = await self.web3.eth.get_transaction_count(
@@ -59,13 +58,11 @@ class Web3Wrapper:
         
         :return: dict[str, Wei]
         """
-        base_fee = await self.web3.eth.gas_price
 
-        max_priority_fee = await self.web3.eth.max_priority_fee
-
+        # hardcode gas for Zora
         return {
-            "maxPriorityFeePerGas": max_priority_fee,
-            "maxFeePerGas": (base_fee + max_priority_fee) * 2,
+            "maxPriorityFeePerGas": 50000,
+            "maxFeePerGas": 50000,
         }
 
 
@@ -106,4 +103,4 @@ async def gas_locker(
         else:
             if locker.locked():
                 locker.release()
-                logger.info(f"Current gas price: {current_gas / 1e9} gwei. Proceeding.")
+                logger.info(f"Current gas price: {current_gas / 1e9} gwei. Processing..")
